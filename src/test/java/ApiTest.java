@@ -13,7 +13,8 @@ public class ApiTest extends Autotest {
 
     @Test (groups = {"names"}, dataProvider = "names", dataProviderClass = MyDataProvider.class)
     public void nameInfoTest(String name) {
-        open(SystemPropertyProvider.getBaseUrl() + name);
+//        Открыть браузер, если это необходимо
+//        open(SystemPropertyProvider.getBaseUrl() + name);
         Response response = new Response(SystemPropertyProvider.getBaseUrl() + name);
         NameInfo nameInfo = response.getInfo();
 
@@ -33,7 +34,8 @@ public class ApiTest extends Autotest {
     @Test(groups = {"errors"})
     public void NameErrorTest() {
         String name = "name=kate";
-        open(SystemPropertyProvider.getBaseUrl() + name);
+//        Открыть браузер, если это необходимо
+//        open(SystemPropertyProvider.getBaseUrl() + name);
         Response response = new Response(SystemPropertyProvider.getBaseUrl() + name);
         NameInfo nameInfo = response.getInfo();
 
@@ -47,7 +49,8 @@ public class ApiTest extends Autotest {
     @Test(groups = {"errors"})
     public void ApiKeyErrorTest() {
         String name = "?name=kate&apikey=1111";
-        open(SystemPropertyProvider.getBaseUrl() + name);
+//        Открыть браузер, если это необходимо
+//        open(SystemPropertyProvider.getBaseUrl() + name);
         Response response = new Response(SystemPropertyProvider.getBaseUrl() + name);
         NameInfo nameInfo = response.getInfo();
 
