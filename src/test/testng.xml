@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Autotest suite" configfailurepolicy="continue" parallel="tests" >
+    <parameter name="browser" value="chrome"/>
+    <test name="01 Проверка имён и вывод информации" parallel="methods" thread-count="100">
+        <groups>
+            <run>
+                <include name="names"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ApiTest"/>
+        </classes>
+    </test>
+    <test name="02 Проверка ошибок при запросах" parallel="methods" thread-count="100">
+        <groups>
+            <run>
+                <include name="errors"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="ApiTest"/>
+        </classes>
+    </test>
+</suite>
